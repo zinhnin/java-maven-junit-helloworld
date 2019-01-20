@@ -20,7 +20,7 @@ pipeline {
                     dir('.') {
                         sh 'set HTTP_PROXY=$HTTP_PROXY'
                         sh 'set HTTPS_PROXY=$HTTP_PROXY'
-                        sh 'mvn clean verify'
+                        sh 'mvn clean compile verify site'
                         step([$class: 'JacocoPublisher', 
                               execPattern: 'target/*.exec',
                               classPattern: 'target/classes',

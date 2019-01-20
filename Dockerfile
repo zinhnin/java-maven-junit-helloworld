@@ -1,1 +1,1 @@
-FROM codecentric/springboot-maven3-centos-candidate
+FROM maven:jdk-8

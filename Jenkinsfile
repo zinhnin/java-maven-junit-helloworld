@@ -14,13 +14,21 @@ pipeline {
         }
     }
     stages {
-        stage('UnitTest & StaticAnalysis') {
+        stage('maven execution') {
             steps {
                 script {
                     dir('.') {
                         sh 'set HTTP_PROXY=$HTTP_PROXY'
                         sh 'set HTTPS_PROXY=$HTTP_PROXY'
                         sh 'mvn clean compile verify site'
+                    }
+                }
+            }
+        }
+        stage('Analysis') {
+            steps {
+                script {
+                    dir('.') {
                         step([$class: 'JacocoPublisher', 
                               execPattern: 'target/*.exec',
                               classPattern: 'target/classes',
@@ -41,4 +49,5 @@ pipeline {
             }
         }
     }
+
 }

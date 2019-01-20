@@ -20,7 +20,7 @@ pipeline {
                     dir('.') {
                         sh 'set HTTP_PROXY=$HTTP_PROXY'
                         sh 'set HTTPS_PROXY=$HTTP_PROXY'
-                        sh 'mvn clean compile verify site'
+                        sh 'mvn clean verify'
                     }
                 }
             }

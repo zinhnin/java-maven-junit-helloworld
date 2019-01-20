@@ -1,1 +1,1 @@
-FROM nefrock/docker-java8-maven3
+FROM codecentric/springboot-maven3-centos-candidate

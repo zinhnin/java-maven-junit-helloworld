@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FindBugsFilter>
+
+	<Match classregex=".*">
+		<Bug
+			pattern="EI_EXPOSE_REP, EI_EXPOSE_REP2, ME_MUTABLE_ENUM_FIELD, MS_SHOULD_BE_FINAL, UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD, UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD, URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" />
+	</Match>
+
+</FindBugsFilter>

@@ -7,10 +7,8 @@ pipeline {
     }
     
     agent {
-        dockerfile {
-            filename 'Dockerfile'
-            dir '.'
-            label env.docker_image_name
+        docker { 
+            image 'maven:3.6.0-jdk-8'
         }
     }
     stages {
@@ -20,7 +18,7 @@ pipeline {
                     dir('.') {
                         sh 'set HTTP_PROXY=$HTTP_PROXY'
                         sh 'set HTTPS_PROXY=$HTTP_PROXY'
-                        sh 'mvn clean verify'
+                        sh 'mvn clean site package'
                     }
                 }
             }

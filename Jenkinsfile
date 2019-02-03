@@ -9,7 +9,7 @@ pipeline {
     agent {
     dockerfile {
         additionalBuildArgs '--build-arg "JENKINS_USER_ID=1000" --build-arg "JENKINS_GROUP_ID=1000" -t sample'
-        args '-v ./.m2:/usr/share/maven/.m2'
+        args '-v ${PWD}/.m2:/usr/share/maven/.m2'
         dir '.'
         filename 'Dockerfile'
         label env.docker_image_name

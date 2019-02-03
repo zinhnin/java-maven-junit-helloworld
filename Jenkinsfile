@@ -8,7 +8,7 @@ pipeline {
     
     agent {
     dockerfile {
-        additionalBuildArgs '--build-arg "JENKINS_USER_ID=991" --build-arg "JENKINS_GROUP_ID=995" '
+        additionalBuildArgs '--build-arg "JENKINS_USER_ID=1000" --build-arg "JENKINS_GROUP_ID=1000" '
         dir '.'
         filename 'Dockerfile'
         label env.docker_image_name

@@ -7,11 +7,11 @@ pipeline {
     }
     
     agent {
-        dockerfile {
-            filename 'Dockerfile'
-            args '--build-arg NODE_ENV=123'
-            dir '.'
-            label env.docker_image_name
+    dockerfile {
+        additionalBuildArgs '--build-arg "JENKINS_USER_ID=991" --build-arg "JENKINS_GROUP_ID=995" '
+        dir '.'
+        filename 'Dockerfile'
+        label 'java-maven3'
         }
     }
     stages {

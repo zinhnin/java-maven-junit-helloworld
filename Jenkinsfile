@@ -11,7 +11,7 @@ pipeline {
         additionalBuildArgs '--build-arg "JENKINS_USER_ID=991" --build-arg "JENKINS_GROUP_ID=995" '
         dir '.'
         filename 'Dockerfile'
-        label 'java-maven3'
+        label docker_image_name
         }
     }
     stages {

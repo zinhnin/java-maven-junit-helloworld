@@ -22,7 +22,7 @@ pipeline {
                     dir('.') {
                         sh 'set HTTP_PROXY=$HTTP_PROXY'
                         sh 'set HTTPS_PROXY=$HTTP_PROXY'
-                        sh 'mvn site package'
+                        sh 'mvn package site'
                     }
                 }
             }

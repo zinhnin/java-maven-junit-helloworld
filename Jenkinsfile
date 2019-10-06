@@ -36,9 +36,9 @@ pipeline {
                         sh 'echo "Analysis stage"'
                         sh 'mvn --batch-mode -V -U -e checksytle:checkstyle spotbuts:spotbugs'
                     }
-                }
 	            recordIssues enabledForFailure: true, tool: checkStyle()
 	            recordIssues enabledForFailure: true, tool: spotBugs()
+                }
             }
         }
     }
